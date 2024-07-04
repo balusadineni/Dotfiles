@@ -1,0 +1,18 @@
+live_config_reload = true
+
+[window]
+
+startup_mode = "Fullscreen"
+option_as_alt = "Both"
+
+[scrolling]
+
+history = 50000
+
+[font]
+
+normal = { family = "SF Mono", style = "Regular" }
+bold = { family = "SF Mono", style = "Bold" }
+italic = { family = "SF Mono", style = "Regular Italic" }
+
+size = 12
