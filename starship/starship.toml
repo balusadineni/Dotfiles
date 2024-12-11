@@ -43,8 +43,13 @@ format = '$symbol'
 [kubernetes]
 format = '[⛵$context \($namespace\)](dimmed green) '
 disabled = false
+[[kubernetes.contexts]]
+context_pattern = "staging.scripbox.org"
+context_alias = "staging"
+[[kubernetes.contexts]]
+context_pattern = "ap-south-1-production.scripbox.net"
+context_alias = "prod"
+[[kubernetes.contexts]]
+context_pattern = "docker-desktop"
+context_alias = "local"
 
-[kubernetes.context_aliases]
-"staging.scripbox.org" = "staging"
-"docker-desktop" = "local"
-"ap-south-1-production.scripbox.net" = "prod"
