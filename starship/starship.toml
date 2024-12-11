@@ -7,9 +7,9 @@ $git_branch\
 $nix_shell\
 $line_break\
 $cmd_duration\
-$character
+$character\
 """
-
+right_format = """$kubernetes"""
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -37,3 +37,14 @@ disabled = true
 
 [nix_shell]
 format = '$symbol'
+
+
+
+[kubernetes]
+format = '[⛵$context \($namespace\)](dimmed green) '
+disabled = false
+
+[kubernetes.context_aliases]
+"staging.scripbox.org" = "staging"
+"docker-desktop" = "local"
+"ap-south-1-production.scripbox.net" = "prod"

@@ -10,11 +10,20 @@ return {
   config = function()
     require('gitsigns').setup {
       signs = {
-        add          = {hl = 'GitGutterAdd'   , text = '▎'},
-        change       = {hl = 'GitGutterChange', text = '▎'},
-        delete       = {hl = 'GitGutterDelete', text = '▎'},
-        topdelete    = {hl = 'GitGutterDelete', text = '▎'},
-        changedelete = {hl = 'GitGutterChange', text = '▎'},
+        add          = { text = '┃' },
+        change       = { text = '┃' },
+        delete       = { text = '_' },
+        topdelete    = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked    = { text = '┆' },
+      },
+      signs_staged = {
+        add          = { text = '┃' },
+        change       = { text = '┃' },
+        delete       = { text = '_' },
+        topdelete    = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked    = { text = '┆' },
       },
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
@@ -63,9 +72,6 @@ return {
         ignore_whitespace = false,
       },
       current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary> • <abbrev_sha>',
-      current_line_blame_formatter_opts = {
-        relative_time = true
-      },
       sign_priority = 6,
       update_debounce = 100,
       status_formatter = nil, -- Use default
@@ -77,10 +83,7 @@ return {
         relative = 'cursor',
         row = 0,
         col = 1
-      },
-      yadm = {
-        enable = false
-      },
+      }
     }
   end
 }

@@ -40,5 +40,5 @@ function makeFullScreen()
 end
 
 
-hs.hotkey.bind({"cmd"}, "m", moveToNextScreen)
-hs.hotkey.bind({"cmd"}, "f", moveToNextScreen)
+hs.hotkey.bind({"cmd"}, "n", moveToNextScreen)
+hs.hotkey.bind({"cmd"}, "l", makeFullScreen)
