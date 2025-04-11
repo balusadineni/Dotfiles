@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "Ram's nix-darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -12,8 +12,9 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      nix.enable = false;
-      environment.systemPackages = [ pkgs.vim ];
+      environment.systemPackages =
+        [ pkgs.cowsay
+        ];
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -39,5 +40,6 @@
     darwinConfigurations."SB-126" = nix-darwin.lib.darwinSystem {
       modules = [ configuration ];
     };
+
   };
 }
