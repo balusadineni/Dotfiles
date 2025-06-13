@@ -128,6 +128,7 @@ require('lazy').setup({
   require 'plugins.nvim-treesitter',
   require 'plugins.neo-tree',
   require 'plugins.fugitive',
+  require 'plugins.avante',
   -- require 'plugins.luarocks',
   require 'plugins.rest-nvim',
 }, {
