@@ -26,6 +26,13 @@ return {
       elixir = { 'mix' },
       json = { 'jq' },
       kotlin = { 'ktfmt' },
+      java = { 'google-java-format' },
+      html = { 'html_beautify' },
+      javascript = { 'prettier' },
+      typescript = { 'prettier' },
+      javascriptreact = { 'prettier' },
+      typescriptreact = { 'prettier' },
+      tex = { 'latexindent' },
     },
   },
 }

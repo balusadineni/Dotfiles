@@ -25,10 +25,24 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
+-- Folding configuration
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.api.nvim_set_keymap('n', '<leader>cf', ':let @+=expand("%")<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<cmd>bn<cr>', { silent = true, desc = 'Next buffer' })
 vim.keymap.set('n', '<C-h>', '<cmd>bp<cr>', { silent = true, desc = 'Previous buffer' })
+
+-- Folding keymaps
+vim.keymap.set('n', 'za', 'za', { desc = 'Toggle fold under cursor' })
+vim.keymap.set('n', 'zc', 'zc', { desc = 'Close fold under cursor' })
+vim.keymap.set('n', 'zo', 'zo', { desc = 'Open fold under cursor' })
+vim.keymap.set('n', 'zM', 'zM', { desc = 'Close all folds' })
+vim.keymap.set('n', 'zR', 'zR', { desc = 'Open all folds' })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -121,16 +135,21 @@ require('lazy').setup({
   require 'plugins.whichkey',
   require 'plugins.fzf-lua',
   require 'plugins.lualine',
-  require 'plugins.neorg',
+  -- require 'plugins.neorg',
   require 'plugins.conform',
   require 'plugins.nvim-cmp',
   require 'plugins.tokyonight',
   require 'plugins.nvim-treesitter',
   require 'plugins.neo-tree',
-  require 'plugins.fugitive',
-  require 'plugins.avante',
+  -- require 'plugins.fugitive', -- replaced by gitsigns + neogit + diffview
+  require 'plugins.gitsigns',
+  require 'plugins.neogit',
+  -- require 'plugins.avante',
   -- require 'plugins.luarocks',
+  require 'plugins.claudecode',
   require 'plugins.rest-nvim',
+  require 'plugins.lspconfig',
+  require 'plugins.vimtex',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

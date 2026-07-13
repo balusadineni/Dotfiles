@@ -6,7 +6,7 @@
 -- plugins/gitsigns.lua
 return {
   'lewis6991/gitsigns.nvim',
-  requires = { 'nvim-lua/plenary.nvim' },
+  dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
     require('gitsigns').setup {
       signs = {
@@ -56,6 +56,7 @@ return {
         map('n', '<leader>hp', gs.preview_hunk)
         map('n', '<leader>hb', function() gs.blame_line{full=true} end)
         map('n', '<leader>tb', gs.toggle_current_line_blame)
+        map('n', '<leader>gb', gs.blame) -- full-file blame pane
 
         -- Text object
         map({'o', 'x'}, 'ih', ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>')

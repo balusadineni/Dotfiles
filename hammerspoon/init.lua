@@ -1,7 +1,7 @@
 ctrlCmdShortcuts = {
 	{ "A", "Alacritty" },
-	{ "V", "Visual Studio Code" },
-	{ "F", "Firefox" },
+	{ "V", "Cursor" },
+	{ "F", "Safari" },
 	{ "C", "Google Chrome" },
 	{ "S", "Slack" },
 	{ "N", "Neovide" },
@@ -12,7 +12,7 @@ cmdShiftShortcuts = {
 	{ "M", "Mail" },
 	{ "M", "Music" },
 	{ "F", "Finder" },
-	{ "S", "Safari" },
+	{ "S", "Firefox" },
 }
 
 for i, shortcut in ipairs(ctrlCmdShortcuts) do

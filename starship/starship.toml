@@ -42,7 +42,7 @@ format = '$symbol'
 
 [kubernetes]
 format = '[⛵$context \($namespace\)](dimmed green) '
-disabled = false
+disabled = true
 [[kubernetes.contexts]]
 context_pattern = "staging.scripbox.org"
 context_alias = "staging"

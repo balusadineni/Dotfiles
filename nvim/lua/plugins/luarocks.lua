@@ -3,7 +3,8 @@ return {
     priority = 1000,
     config = true,
     opts = {
-      rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }
+      rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
+      hererocks = true,
     }
   }
 
